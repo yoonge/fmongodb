@@ -3,7 +3,7 @@ const router = require('koa-router')()
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
     title: 'Hello Koa 2!',
-    content: 'A test project powered by MongoDB.',
+    content: 'A test project powered by MongoDB.'
   })
 })
 

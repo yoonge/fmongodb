@@ -6,3 +6,16 @@ body {
 a {
   color: #00b7ff;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table th,
+table td {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
