@@ -1,5 +1,7 @@
-const router = require('koa-router')()
-const db = require('../module/db')
+import koaRouter from 'koa-router'
+const router = koaRouter()
+
+import db from '../module/db.js'
 
 router.prefix('/users')
 
@@ -26,4 +28,4 @@ router.get('/bar', async (ctx, next) => {
   ctx.body = 'this is a users/bar response'
 })
 
-module.exports = router
+export default router

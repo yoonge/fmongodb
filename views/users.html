@@ -1,26 +1,32 @@
-<link rel="stylesheet" href="./stylesheets/style.css">
-<title>{{ title }}</title>
+{{extend 'layout.html'}}
 
-<h2>{{ title }}</h2>
-<table>
-    <thead>
+{{block 'content'}}
+<h4>User List</h4>
+<h3 class="text-end">
+    <a class="btn btn-sm btn-dark" href="/users/add" role="button">Add</a>
+</h3>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
         <tr>
-            <th>姓名</th>
-            <th>用户名</th>
-            <th>性别</th>
-            <th>年龄</th>
-            <th>操作</th>
+            <th>#</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Manage</th>
         </tr>
     </thead>
     <tbody>
         {{each data}}
         <tr>
-            <td>{{$value.nickname}}</td>
-            <td>{{$value.username}}</td>
-            <td>{{$value.sex}}</td>
-            <td>{{$value.age}}</td>
-            <td><a href="#">编辑</a> <a href="#">删除</a></td>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ $value.nickname }}</td>
+            <td>{{ $value.username }}</td>
+            <td>{{ $value.sex }}</td>
+            <td>{{ $value.age }}</td>
+            <td><a href="#" class="link-primary">Edit</a> <a href="#" class="link-danger">Delete</a></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
+{{/block}}

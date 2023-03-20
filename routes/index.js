@@ -1,9 +1,10 @@
-const router = require('koa-router')()
+import koaRouter from 'koa-router'
+const router = koaRouter()
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
-    title: 'Hello Koa 2!',
-    content: 'A test project powered by MongoDB.'
+    title: 'Hello Koa2 & MongoDB!',
+    content: 'Welcome to my user management system.'
   })
 })
 
@@ -17,4 +18,4 @@ router.get('/json', async (ctx, next) => {
   }
 })
 
-module.exports = router
+export default router

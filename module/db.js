@@ -1,5 +1,6 @@
-const { dbUrl, dbName } = require('./config')
-const { MongoClient } = require('mongodb')
+import dbConfig from './config.js'
+import { MongoClient } from 'mongodb'
+const { dbUrl, dbName } = dbConfig
 
 class Db {
     static getInstance() {
@@ -45,4 +46,4 @@ class Db {
     }
 }
 
-module.exports = Db.getInstance()
+export default Db.getInstance()

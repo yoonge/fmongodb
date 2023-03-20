@@ -1,21 +1,15 @@
 body {
-  padding: 50px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00b7ff;
+.navbar-brand {
+  font-size: 24px;
+  margin-right: 36px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-table th,
-table td {
-    border: 1px solid gray;
-    text-align: left;
-    padding: 8px;
+.layout-body {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
