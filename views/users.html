@@ -3,30 +3,34 @@
 {{block 'content'}}
 <h4>User List</h4>
 <h3 class="text-end">
-    <a class="btn btn-sm btn-dark" href="/users/add" role="button">Add</a>
+  <a class="btn btn-sm btn-dark" href="/users/insert" role="button">Add</a>
 </h3>
 <table class="table table-bordered table-striped">
-    <thead class="table-dark">
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Sex</th>
-            <th>Age</th>
-            <th>Manage</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{each data}}
-        <tr>
-            <td>{{ $index + 1 }}</td>
-            <td>{{ $value.nickname }}</td>
-            <td>{{ $value.username }}</td>
-            <td>{{ $value.sex }}</td>
-            <td>{{ $value.age }}</td>
-            <td><a href="#" class="link-primary">Edit</a> <a href="#" class="link-danger">Delete</a></td>
-        </tr>
-        {{/each}}
-    </tbody>
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Manage</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{each data}}
+    <tr>
+      <td>{{ $index + 1 }}</td>
+      <td>{{ $value.nickname }}</td>
+      <td>{{ $value.username }}</td>
+      <td>{{ $value.sex }}</td>
+      <td>{{ $value.age }}</td>
+      <td>{{ $value.email }}</td>
+      <td>
+        <a href="/users/update?_id={{@$value._id}}" class="link-primary">Edit</a>
+        <a href="/users/remove?_id={{@$value._id}}" class="link-danger">Delete</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
 </table>
 {{/block}}

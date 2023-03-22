@@ -2,7 +2,7 @@ import Koa from 'koa'
 const app = new Koa()
 
 import path, { dirname } from 'node:path'
-import { fileURLToPath  } from 'node:url'
+import url, { fileURLToPath  } from 'node:url'
 import render from 'koa-art-template'
 import json from 'koa-json'
 import onerror from 'koa-onerror'
@@ -26,6 +26,13 @@ app.use(bodyparser({
 app.use(json())
 app.use(logger())
 app.use(koaStatic(_dirName + '/public'))
+
+// Set templates global variable
+app.use(async (ctx, next) => {
+  const { pathname } = url.parse(ctx.request.url)
+  ctx.state.pathname = pathname
+  await next()
+})
 
 // logger
 app.use(async (ctx, next) => {
